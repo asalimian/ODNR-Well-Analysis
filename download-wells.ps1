@@ -37,7 +37,8 @@ foreach ($well in $oil.layers.features) {
         $wellcard = Invoke-RestMethod "https://gis.ohiodnr.gov/MapViewer/WellSummaryCard.asp?api=$api" 
 
         if ($rate_limited) {
-            $cooldown = get-random -minimum 10 -maximum 20 # Set your time here
+            #get-random -minimum 10 -maximum 20
+            $cooldown = 20  # Set your time here
             
             for ($j = $cooldown; $j -gt 0; $j--) {            
                 Write-Host "`rCooldown: $j of $cooldown seconds " -NoNewLine -ForegroundColor Cyan
